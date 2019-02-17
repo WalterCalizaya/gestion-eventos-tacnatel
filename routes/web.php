@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Admin Views
+//Route::group(['prefix'=>'admin', 'middleware'=>'is_admin', 'as'=>'admin.'], function(){
+Route::group(['prefix'=>'admin', 'as'=>'admin.'], function(){
+	Route::get('/', function(){
+		return view('admin.dashboard.index');
+	})->name('dashboard');
+});
